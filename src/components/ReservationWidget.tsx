@@ -1,46 +1,12 @@
-import { useState } from 'react';
+import { CalendarDays } from 'lucide-react';
 
-const ReservationWidget = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  const handleLoad = () => {
-    setIsLoading(false);
-  };
-
-  return (
-    <div className="relative w-full">
-      <div className="text-center mb-6">
-        <h3 className="text-3xl font-bold text-accent mb-4 font-playfair">
-          Reserva tu Mesa
-        </h3>
-        <p className="text-muted-foreground">
-          Reserva directamente desde aquí o llámanos
-        </p>
-      </div>
-      
-      <div className="relative rounded-xl overflow-hidden shadow-tulsi border-2 border-accent/20">
-        {isLoading && (
-          <div className="absolute inset-0 flex items-center justify-center bg-card z-10">
-            <div className="text-center">
-              <div className="w-8 h-8 border-4 border-accent border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-              <p className="text-muted-foreground">Cargando sistema de reservas...</p>
-            </div>
-          </div>
-        )}
-        
-        <iframe 
-          src="https://app.tableo.com/r/wyijJGK" 
-          width="100%" 
-          height="100%" 
-          style={{ border: 'none', minHeight: '700px' }} 
-          referrerPolicy="unsafe-url"
-          onLoad={handleLoad}
-          title="Sistema de Reservas Tableo"
-          className="w-full"
-        />
-      </div>
-    </div>
-  );
-};
-
+const ReservationWidget = () => (
+  <section className="relative w-full rounded-xl border-2 border-accent/20 bg-card p-6 text-center shadow-tulsi">
+    <CalendarDays className="mx-auto mb-4 h-10 w-10 text-accent" aria-hidden="true" />
+    <h3 className="text-3xl font-bold text-accent mb-4 font-playfair">Reserva tu Mesa</h3>
+    <p className="text-muted-foreground mb-6">El calendario de reservas se ofrece en Tableo. Al pulsar, se abrirá su servicio externo.</p>
+    <a href="https://app.tableo.com/r/wyijJGK" target="_blank" rel="noopener noreferrer" className="btn-tulsi inline-flex items-center justify-center gap-2">Abrir calendario de reservas</a>
+    <p className="text-sm text-muted-foreground mt-4">También puedes llamarnos al <a className="underline" href="tel:+34983844607">+34 983 84 46 07</a>.</p>
+  </section>
+);
 export default ReservationWidget;
