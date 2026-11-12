@@ -74,3 +74,12 @@ Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-trick
 🔁 Prueba despliegue automático con GitHub Actions
 🚀 Test de despliegue automático corregido
 
+
+ 
+## Revisión legal del sitio — información que debe validar el titular
+- Se añadieron rutas de Aviso legal, Privacidad, Cookies, Alérgenos y Condiciones de pedidos.
+- Titular indicado por el cliente del proyecto: Razia Bibi, NIE Y4154636E. Domicilio comercial: C/ Marina Escobar, 1, 47001 Valladolid.
+- Antes de considerar completa la documentación, confirmar domicilio legal/fiscal, datos registrales si fueran exigibles, plazos de conservación, proveedores y transferencias internacionales, bases jurídicas por tratamiento, procedimiento de derechos y condiciones comerciales/cancelaciones.
+- La cocina debe facilitar y validar la ficha de los alérgenos de cada plato y cualquier información de contaminación cruzada. La web marca la información de cada plato como pendiente; no inferirla desde el nombre ni desde descripciones.
+- Fuera del alcance de la web: obligaciones laborales, fiscales, sanitarias, prevención de riesgos, igualdad, videovigilancia y contratación de personal.
+- La web usa almacenamiento local para el carrito y abre Tableo, Google Maps y Stripe solo por acción expresa. Confirmar inventario técnico y condiciones contractuales con cada proveedor.
