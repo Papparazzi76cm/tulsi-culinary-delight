@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Youtube, MapPin, Phone, Mail } from 'lucide-react';
 import LotteryModal from '@/components/LotteryModal';
 
@@ -169,9 +170,14 @@ const Footer = () => {
             <p className="text-muted-foreground text-center md:text-left">
               &copy; {currentYear} Tulsi Indian Restaurant. Todos los derechos reservados.
             </p>
-            <p className="text-muted-foreground text-sm text-center md:text-right">
-              Diseñado con ♥ en Valladolid
-            </p>
+            <nav aria-label="Información legal" className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm">
+              <Link className="text-muted-foreground hover:text-accent underline" to="/legal/aviso-legal">Aviso legal</Link>
+              <Link className="text-muted-foreground hover:text-accent underline" to="/legal/privacidad">Privacidad</Link>
+              <Link className="text-muted-foreground hover:text-accent underline" to="/legal/cookies">Cookies</Link>
+              <Link className="text-muted-foreground hover:text-accent underline" to="/legal/alergenos">Alérgenos</Link>
+              <Link className="text-muted-foreground hover:text-accent underline" to="/legal/condiciones-pedidos">Condiciones de pedidos</Link>
+            </nav>
+            <p className="text-muted-foreground text-sm text-center md:text-right">Diseñado con ♥ en Valladolid</p>
           </div>
         </div>
       </div>
