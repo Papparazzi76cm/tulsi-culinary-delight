@@ -11,6 +11,7 @@ import type { Session } from '@supabase/supabase-js';
 
 // ... (El resto de las importaciones de páginas no cambia)
 import Index from "./pages/Index";
+import LegalPages from "./pages/LegalPages";
 import NotFound from "./pages/NotFound";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import PaymentCancelled from "./pages/PaymentCancelled";
@@ -70,6 +71,7 @@ const App = () => (
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={<Index />} />
+          <Route path="/legal/:page" element={<LegalPages />} />
           <Route path="/payment-success" element={<PaymentSuccess />} />
           <Route path="/payment-cancelled" element={<PaymentCancelled />} />
           <Route path="/staff/login" element={<StaffLogin />} />
