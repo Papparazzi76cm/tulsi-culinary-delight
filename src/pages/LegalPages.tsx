@@ -103,7 +103,7 @@ function LegalNotice() {
     </section>
     <h2 className="text-2xl font-semibold text-accent">Uso del sitio</h2>
     <p>El usuario debe utilizar el sitio de forma lícita y no realizar acciones que dañen, sobrecarguen o impidan su funcionamiento. El contenido de la carta y la disponibilidad de platos pueden variar; confirma la información con el restaurante antes de hacer un pedido, especialmente si existe una alergia o intolerancia.</p>
-    <p>Las reservas online usan el proveedor Dish y la web puede enviar datos de pedidos a Supabase y al servicio de correo configurado por el titular. Al cargar el widget o enviar un pedido, intervienen los proveedores correspondientes y sus condiciones. El titular debe confirmar qué proveedor de correo y qué encargados participan.</p>
+    <p>Las reservas y pedidos online se gestionan a través de Dish. El código también incluye funciones de Supabase para consultar reseñas y tramitar pedidos; el titular debe confirmar qué flujos están activos y qué servicios y encargados participan.</p>
     <p>Para consultas sobre el sitio, contacta con el titular por los canales indicados arriba.</p>
     <PendingTasks/>
   </Shell>;
@@ -114,11 +114,11 @@ function PrivacyPolicy() {
     <p className="rounded-xl border border-accent/40 bg-secondary p-5"><strong>Información básica:</strong> responsable: {OWNER} (NIE {NIE}); domicilio: {ADDRESS}. Se usan los datos de contacto para responder solicitudes y los datos de pedido para tramitar compra, pago, recogida o entrega y atender incidencias. Canal de contacto: <a className="underline" href={"mailto:" + EMAIL}>{EMAIL}</a>. No envíes información médica o de salud a través de formularios o notas generales.</p>
     <h2 className="text-2xl font-semibold text-accent">Información adicional</h2>
     <h3 className="text-xl font-semibold">Qué datos y para qué</h3>
-    <p>La web no tiene actualmente un formulario propio de contacto. El calendario de reservas y el checkout de pedidos son servicios externos. Al solicitar una reserva o hacer un pedido, pueden tratarse los datos identificativos y de contacto facilitados por el usuario, los detalles del servicio y, para la entrega, la dirección.</p>
+    <p>La web no tiene actualmente un formulario propio de contacto. Las reservas y pedidos online se ofrecen mediante Dish. Al solicitar una reserva o hacer un pedido, pueden tratarse los datos identificativos y de contacto, los detalles del servicio y, si procede, la dirección de entrega.</p>
     <h3 className="text-xl font-semibold">Base jurídica</h3>
     <p>Para gestionar una reserva, responder una consulta o preparar y cobrar un pedido, la base prevista es la aplicación de medidas precontractuales o la ejecución del contrato solicitado. Los datos necesarios para cumplir deberes fiscales y contables se tratarán conforme a la obligación legal aplicable. El titular debe confirmar la base de cada operación antes de publicar esta información como definitiva.</p>
     <h3 className="text-xl font-semibold">Proveedores y destinatarios</h3>
-    <p>El sitio utiliza Supabase para almacenar datos de pedidos y para consultar las reseñas; las reservas online se prestan a través de Dish. Los servicios reciben los datos necesarios para sus funciones. El titular debe confirmar las entidades proveedoras, los contratos aplicables y sus condiciones de privacidad.</p>
+    <p>Las reservas y pedidos online se ofrecen mediante Dish. El código contiene además funciones de Supabase para consultar reseñas y tramitar pedidos. El titular debe confirmar cuáles están activas, qué datos recibe cada proveedor, los contratos aplicables y sus condiciones de privacidad.</p>
     <h3 className="text-xl font-semibold">Conservación y transferencias</h3>
     <p><strong>Plazos de conservación:</strong> pendientes de confirmación por el titular según la finalidad y los plazos legales aplicables. <strong>Transferencias internacionales:</strong> pendientes de verificar con cada proveedor y sus garantías; no se afirma que no existan.</p>
     <h3 className="text-xl font-semibold">Derechos</h3>
@@ -170,9 +170,9 @@ function AllergenPolicy() {
 function OrderTerms() {
   return <Shell title="Condiciones de pedidos">
     <h2 className="text-2xl font-semibold text-accent">Precios y pago</h2>
-    <p>La carta muestra los precios en euros. El checkout presenta el importe del pedido y, si se elige recogida, el descuento aplicable. Según la información actualmente disponible, el pago se realiza en el restaurante; confirma el total y los datos de entrega antes de enviar el pedido.</p>
+    <p>La carta muestra precios en euros. Antes de enviar el pedido, revisa en Dish el importe total, posibles gastos, condiciones de recogida o entrega y forma de pago. El titular debe confirmar que estos datos coinciden con la operativa real del restaurante.</p>
     <h2 className="text-2xl font-semibold text-accent">Recogida, entrega y reservas</h2>
-    <p>La web ofrece información de recogida y pedidos. El ámbito territorial de entrega, plazos, gastos y condiciones de cancelación o modificación deben confirmarse con el restaurante antes de enviar el pedido. Las reservas online se gestionan mediante Dish.</p>
+    <p>Los pedidos y reservas online se ofrecen mediante Dish. Antes de confirmar, revisa el ámbito territorial, los plazos, gastos y condiciones de cancelación que presente el servicio. El titular debe confirmar que reflejan la operativa real.</p>
     <h2 className="text-2xl font-semibold text-accent">Alérgenos y disponibilidad</h2>
     <p>Consulta la información de alérgenos antes de pedir y confirma con el personal al recibir el pedido. La disponibilidad de la carta puede variar.</p>
     <p>Para cambios, cancelaciones, reclamaciones o incidencias, contacta con el restaurante en <a className="underline" href={"mailto:" + EMAIL}>{EMAIL}</a> o en los teléfonos publicados. El titular debe completar las condiciones comerciales y los plazos que se aplican realmente.</p>
