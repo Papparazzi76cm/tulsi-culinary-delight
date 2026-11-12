@@ -6,6 +6,7 @@ import { toast } from 'sonner';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { menuData } from '@/data/menuData';
+import { Link } from 'react-router-dom';
 
 interface TakeawayMenuProps {
   onOpenCart: () => void;
