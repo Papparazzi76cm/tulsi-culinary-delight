@@ -44,7 +44,7 @@ function Meta({ slug }: { slug: string }) {
       return node;
     };
     ensure('meta[name="description"]', "meta", "name", "description").setAttribute("content", doc.description);
-    ensure('link[rel="canonical"]', "link", "rel", "canonical").setAttribute("href", BASE + "/#/" + slug);
+    ensure('link[rel="canonical"]', "link", "rel", "canonical").setAttribute("href", BASE + "/#/legal/" + slug);
     return () => { document.title = "Restaurante Indio Tulsi Valladolid | Cocina India Auténtica"; };
   }, [slug]);
   return null;
@@ -155,7 +155,7 @@ function AllergenPolicy() {
       <summary className="cursor-pointer font-semibold text-accent">{category.title} ({category.items.length})</summary>
       <ul className="mt-3 grid sm:grid-cols-2 gap-x-6 gap-y-2">{category.items.map((item, i) => <li key={item + i}>{item} — <span className="text-muted-foreground">información pendiente de validar por cocina</span></li>)}</ul>
     </details>)}
-    <details className="rounded-lg border border-border bg-card p-4"><summary className="cursor-pointer font-semibold text-accent">{degustacion.title}</summary><ul className="mt-3 space-y-2">{degustacion.menus.map(menu => <li key={menu.name}>{menu.name} — <span className="text-muted-foreground">composición y alérgenos pendientes de validar por cocina</span></li>)}</ul></details></div>
+    <details className="rounded-lg border border-border bg-card p-4"><summary className="cursor-pointer font-semibold text-accent">{degustacion.title} ({degustacion.menus.length})</summary><ul className="mt-3 space-y-3">{degustacion.menus.map(menu => { const dishes = [...Object.values(menu.sections).flat().map(item => item.name), "Cheese Naan", "Arroz", "Postre"]; return <li key={menu.name}><strong>{menu.name}</strong><ul className="mt-1 list-disc pl-6">{dishes.map((dish, index) => <li key={dish + index}>{dish} — <span className="text-muted-foreground">alérgenos pendientes de validar por cocina</span></li>)}</ul></li>; })}</ul></details></div>
     <p>Consulta por teléfono antes de hacer el pedido: <a className="underline" href="tel:+34645946202">{PHONE}</a> o <a className="underline" href="tel:+34983844607">{PHONE_ALT}</a>. La cocina debe confirmar también cualquier riesgo de contacto cruzado; esta web no dispone todavía de información confirmada sobre ese punto.</p>
   </Shell>;
 }
@@ -175,7 +175,6 @@ function OrderTerms() {
 
 export default function LegalPages() {
   const { page = "aviso-legal" } = useParams();
-  const doc = documents[page] ?? documents["aviso-legal"];
   return <><Meta slug={documents[page] ? page : "aviso-legal"} />{
     page === "privacidad" ? <PrivacyPolicy/> :
     page === "cookies" ? <CookiesPolicy/> :
