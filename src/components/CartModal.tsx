@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { X, Minus, Plus, Trash2, ShoppingCart } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -298,6 +299,11 @@ const CartModal = ({ isOpen, onClose, onShowContest }: CartModalProps) => {
                   </p>
                 )}
               </div>
+
+              <section className="rounded-lg border border-border bg-secondary p-4 text-sm space-y-2" aria-label="Información de privacidad y alérgenos">
+                <p><strong>Privacidad:</strong> Razia Bibi (NIE Y4154636E) utiliza los datos de contacto y entrega para tramitar el pedido y el pago. Consulta la <Link className="underline text-accent" to="/legal/privacidad">política de privacidad</Link>.</p>
+                <p>La información de alérgenos de cada plato está pendiente de validar por cocina. Pregunta antes de confirmar el pedido y vuelve a consultarlo al recibirlo. <Link className="underline text-accent" to="/legal/alergenos">Ver información de alérgenos</Link>.</p>
+              </section>
 
               {/* Checkout button */}
               <Button
